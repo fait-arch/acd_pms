@@ -1,3 +1,9 @@
+@import 'leaflet/dist/leaflet.css';
+
+/* Resto de tus estilos... */
+/* Por ejemplo, tus importaciones de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Y el resto de tu CSS... */

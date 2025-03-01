@@ -12,16 +12,20 @@ export default function Empresa() {
 			'Trabajo en equipo',
 		],
 		organigrama: [
-			{ cargo: 'CEO', nombre: 'Juan Pérez', foto: '/images/ceo.jpg' },
 			{
-				cargo: 'Gerente de Ventas',
-				nombre: 'Ana Gómez',
-				foto: '/images/ventas.jpg',
+				cargo: 'CTO',
+				nombre: 'JUAN MOROMENACHO',
+				foto: 'https://avatars.githubusercontent.com/u/70347526?v=4',
+			},
+			{
+				cargo: 'CEO',
+				nombre: 'SOPHIA IBARRA',
+				foto: 'https://avatars.githubusercontent.com/u/150631072?v=4',
 			},
 			{
 				cargo: 'Gerente de Producción',
-				nombre: 'Carlos Ramírez',
-				foto: '/images/produccion.jpg',
+				nombre: 'LEONARDO VEINTIMILLA',
+				foto: 'https://avatars.githubusercontent.com/u/82969979?v=4',
 			},
 		],
 	};

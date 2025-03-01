@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 
 // Definimos la interfaz para el producto
@@ -55,33 +54,39 @@ export default function ProductsPage({ showOffersOnly }: ProductsPageProps) {
 			setProducts(filteredProducts);
 			console.log('Productos cargados:', filteredProducts); // Verifica los productos
 		};
-
 		fetchProducts();
 	}, [showOffersOnly]);
 
 	return (
-		<div className="max-w-6xl mx-auto p-6 min-h-screen">
-			<h1 className="text-4xl font-bold text-center mb-8">
+		<div className="max-w-6xl mx-auto p-6 min-h-screen bg-gray-900 text-white">
+			<h1 className="text-4xl font-bold text-center mb-8 text-white">
 				{showOffersOnly ? 'Ofertas Especiales' : 'Todos los Productos'}
 			</h1>
 			<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{products.map((product) => (
 					<div
 						key={product.id}
-						className="border rounded-lg p-4 shadow-lg"
+						className="border border-gray-700 rounded-lg p-4 shadow-lg bg-gray-800 hover:bg-gray-700 transition-colors duration-200"
 					>
 						<img
 							src={product.image}
 							alt={product.name}
-							className="w-full h-48 object-cover rounded-md bg-gray-200"
+							className="w-full h-48 object-cover rounded-md bg-gray-700"
 						/>
-						<h2 className="text-xl font-semibold mt-4">
+						<h2 className="text-xl font-semibold mt-4 text-white">
 							{product.name}
 						</h2>
-						<p className="text-gray-600">{product.description}</p>
-						<p className="text-lg font-bold mt-2">
-							${product.price.toFixed(2)}
-						</p>
+						<p className="text-white">{product.description}</p>
+						<div className="flex justify-between items-center mt-4">
+							<p className="text-lg font-bold text-white">
+								${product.price.toFixed(2)}
+							</p>
+							{product.offer && (
+								<span className="bg-indigo-900 text-white px-2 py-1 rounded text-sm">
+									Oferta
+								</span>
+							)}
+						</div>
 					</div>
 				))}
 			</div>
