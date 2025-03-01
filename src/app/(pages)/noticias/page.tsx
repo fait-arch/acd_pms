@@ -19,7 +19,7 @@ const newsData = [
 
 export default function Home() {
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 p-4">
+		<div className="min-h-screen flex flex-col items-center justify-start bg-gray-100 dark:bg-gray-800 p-4 pt-8">
 			<h1 className="text-2xl font-bold text-black dark:text-white mb-4">
 				Últimas Noticias
 			</h1>

@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
+## Evaluación en Contacto con el Docente
 
 First, run the development server:
 
+### Ejecutar Next
+
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Ejecutar Django
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd Backend
+pip install -r requirements.txt
+python manage.py migrate
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologias
 
-## Learn More
+- Nextjs (Typescripy)
+- Tailwend
+- Django (Pyhton)
+- SQL (SQLite)
 
-To learn more about Next.js, take a look at the following resources:
+## Diagrama ORM
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Diagrama ORM para un modelo Django basado en cada una de las páginas del proyecto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```mermaid
+classDiagram
+    %% Modelo para Empresa
+    class Empresa {
+        +CharField mision
+        +CharField vision
+        +ArrayField valores
+    }
 
-## Deploy on Vercel
+    class Directivo {
+        +CharField cargo
+        +CharField nombre
+        +URLField foto
+        +ForeignKey empresa
+    }
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    %% Modelo para Productos
+    class Producto {
+        +IntegerField id
+        +CharField name
+        +DecimalField price
+        +TextField description
+        +URLField image
+        +BooleanField offer
+    }
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    %% Modelo para Localización
+    class Ubicacion {
+        +CharField title
+        +TextField address
+        +FloatField latitude
+        +FloatField longitude
+    }
+
+    %% Modelo para Noticias
+    class Noticia {
+        +IntegerField id
+        +URLField imageSrc
+        +DateField date
+        +CharField title
+        +TextField content
+    }
+
+    %% Modelo para Contacto
+    class Formulario_Contacto {
+        +CharField nombre
+        +EmailField email
+        +TextField mensaje
+        +DateTimeField fecha_creacion
+    }
+
+    %% Relaciones
+    Empresa "1" -- "many" Directivo : tiene
+```

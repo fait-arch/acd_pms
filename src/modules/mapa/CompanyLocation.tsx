@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import LocationMap from './LocationMap';
 
 interface LocationData {
@@ -40,7 +39,7 @@ export default function CompanyLocation() {
 							</p>
 							<p className="text-white">
 								<span className="font-medium">Email:</span>{' '}
-								info@tuempresa.com
+								info@ikaros.com
 							</p>
 							<p className="text-white">
 								<span className="font-medium">Horario:</span>{' '}

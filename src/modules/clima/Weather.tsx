@@ -47,7 +47,7 @@ export default function Weather() {
 	};
 
 	return (
-		<div className="max-w-md mx-auto p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-colors duration-200">
+		<div className="max-w-md mx-auto p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-colors duration-200 gap-y-4">
 			<h1 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
 				Clima Actual
 			</h1>
@@ -59,11 +59,11 @@ export default function Weather() {
 						value={inputCity}
 						onChange={(e) => setInputCity(e.target.value)}
 						placeholder="Ingresa una ciudad"
-						className="flex-1 p-2 border rounded-md dark:bg-gray-700 dark:text-white dark:border-gray-600"
+						className="flex-1 p-2 border rounded-md dark:bg-gray-800 dark:text-white dark:border-gray-600"
 					/>
 					<button
 						type="submit"
-						className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors dark:bg-blue-600 dark:hover:bg-blue-700"
+						className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors dark:bg-blue-600 dark:hover:bg-blue-800"
 					>
 						Buscar
 					</button>
@@ -106,8 +106,8 @@ export default function Weather() {
 						</p>
 					</div>
 
-					<div className="grid grid-cols-2 gap-4 mt-4">
-						<div className="bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
+					<div className="grid grid-cols-2 gap-4 mt-4 gap-y-4">
+						<div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow">
 							<p className="text-sm text-gray-500 dark:text-gray-400">
 								Sensación térmica
 							</p>
@@ -115,7 +115,7 @@ export default function Weather() {
 								{weatherData.feels_like}°C
 							</p>
 						</div>
-						<div className="bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
+						<div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow">
 							<p className="text-sm text-gray-500 dark:text-gray-400">
 								Humedad
 							</p>
@@ -123,7 +123,7 @@ export default function Weather() {
 								{weatherData.humidity}%
 							</p>
 						</div>
-						<div className="bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
+						<div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow">
 							<p className="text-sm text-gray-500 dark:text-gray-400">
 								Viento
 							</p>
@@ -131,7 +131,7 @@ export default function Weather() {
 								{weatherData.windSpeed} m/s
 							</p>
 						</div>
-						<div className="bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
+						<div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow">
 							<p className="text-sm text-gray-500 dark:text-gray-400">
 								Presión
 							</p>
@@ -141,7 +141,7 @@ export default function Weather() {
 						</div>
 					</div>
 
-					<div className="flex justify-between mt-4 bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
+					<div className="flex justify-between mt-4 bg-white dark:bg-gray-800 p-3 rounded-lg shadow">
 						<div>
 							<p className="text-sm text-gray-500 dark:text-gray-400">
 								Mín
